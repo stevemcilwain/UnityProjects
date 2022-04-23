@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
         {
             case Vector3 v when v.Equals(Vector3.zero):     //idle
                 _animator.SetBool("idle", true);
+                _animator.Play("player_idle");
                 break;
             case Vector3 v when v.Equals(Vector3.back):     //moving south
                 _animator.SetBool("idle", false);
