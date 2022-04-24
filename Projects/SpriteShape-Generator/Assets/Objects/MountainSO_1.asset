@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d4ac0698d6b0d438b521777aa06bca, type: 3}
+  m_Name: MountainSO_1
+  m_EditorClassIdentifier: 
+  EnableDebug: 1
+  LeftTop: {x: 0, y: 0}
+  SlopeTop: {x: 40, y: -30}
+  LeftBottom: {x: 0, y: -200}
+  RightTop: {x: 300, y: 0}
+  SlopeBottom: {x: 250, y: -70}
+  RightBottom: {x: 300, y: -200}
+  MinPointCount: 4
+  MaxPointCount: 4
+  MinPointHeight: 5
+  MaxPointHeight: 10
+  Tangents:
+  - Left: {x: -5, y: -10, z: 0}
+    Right: {x: 5, y: 10, z: 0}
+  - Left: {x: 5, y: 10, z: 0}
+    Right: {x: -5, y: -10, z: 0}
+  TreePrefab: {fileID: 7622492058730483848, guid: c2509bf883b398149bb87d2ff124b734, type: 3}
