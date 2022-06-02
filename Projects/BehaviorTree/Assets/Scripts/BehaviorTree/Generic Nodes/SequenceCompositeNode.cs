@@ -3,7 +3,7 @@
 /// A sequence node executes all child nodes (from top to bottom).
 /// If one node fails, execution stops and returns failure.
 /// </summary>
-public class SequenceNode : CompositeNode
+public class SequenceCompositeNode : CompositeNode
 {
 
     public override NodeStatus Tick(BehaviorState state)
@@ -16,7 +16,11 @@ public class SequenceNode : CompositeNode
         if (status == NodeStatus.RUNNING) return NodeStatus.RUNNING;
 
         // return failure and the parent will stop calling Tick()
-        if (status == NodeStatus.FAILURE) return status;
+        if (status == NodeStatus.FAILURE)
+        {
+            Current = 0;
+            return NodeStatus.FAILURE;
+        }
 
         // not RUNNING or FAILED, so increment Current Node
         Current++;

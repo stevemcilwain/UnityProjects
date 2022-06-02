@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ChaseClosestActionNode : ActionNode
+public class EnemyChaseActionNode : ActionNode
 {
 
     [SerializeField]
@@ -29,18 +28,22 @@ public class ChaseClosestActionNode : ActionNode
     public override NodeStatus Tick(BehaviorState state)
     {
         var s = (EnemyBehaviorState)state;
+        var target = s.Target;
 
-        if (s == null)
+        if (target == null)
         {
+            LogWarning("No target set for enemy to chase.");
+            s.Chasing = false;
             agent.isStopped = true;
             return NodeStatus.FAILURE;
         }
         else
         {
-            agent.SetDestination(s.Target.transform.position);
+            Log("Setting target to: " + target.name);
+            s.Chasing = true;
+            agent.SetDestination(target.transform.position);
+            return NodeStatus.SUCCESS;
         }
-
-        return NodeStatus.RUNNING;
     }
 
 

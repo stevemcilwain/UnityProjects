@@ -1,7 +1,7 @@
 /// <summary>
 /// A selector node executes one of multiple children
 /// </summary>
-public class SelectorNode : CompositeNode
+public class SelectorCompositeNode : CompositeNode
 {
 
     public override NodeStatus Tick(BehaviorState state)

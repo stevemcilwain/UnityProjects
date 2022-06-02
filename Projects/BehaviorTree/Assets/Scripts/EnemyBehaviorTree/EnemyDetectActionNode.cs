@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class EnemyTargetPlayerNode : ActionNode
+public class EnemyDetectActionNode : ActionNode
 {
     [SerializeField]
     private LayerMask targetLayers;
@@ -16,14 +16,19 @@ public class EnemyTargetPlayerNode : ActionNode
     {
         var myState = (EnemyBehaviorState)state;
 
+        Log("Searching for player...");
+
         myState.Target = FindTarget();
 
         if (myState.Target != null)
         {
+            Log("Target set: " + myState.Target.name);
             return NodeStatus.SUCCESS;
         }
         else
         {
+
+            LogWarning("No player target found");
             return NodeStatus.FAILURE;
         }
     }

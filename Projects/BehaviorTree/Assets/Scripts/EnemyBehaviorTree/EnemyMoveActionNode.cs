@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyMovementNode : ActionNode
+public class EnemyMoveActionNode : ActionNode
 {
 
     [SerializeField]
@@ -35,7 +35,7 @@ public class EnemyMovementNode : ActionNode
 
         var s = (EnemyBehaviorState)state;
 
-        if (!s.Moving)
+        if (!s.Moving && !s.Chasing)
         {
             s.MovementDestination = RandomNavmeshLocation(range);
             Log("Setting destination to: " + s.MovementDestination);

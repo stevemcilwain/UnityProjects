@@ -1,6 +1,6 @@
 
 
-public class InverterNode : DecoratorNode
+public class InverterDecoratorNode : DecoratorNode
 {
 
     public override NodeStatus Tick(BehaviorState state)

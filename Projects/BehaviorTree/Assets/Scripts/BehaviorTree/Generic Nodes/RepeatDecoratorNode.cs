@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class RepeatSequenceNode : DecoratorNode
+public class RepeatDecoratorNode : DecoratorNode
 {
 
     [Range(1, 1000)]

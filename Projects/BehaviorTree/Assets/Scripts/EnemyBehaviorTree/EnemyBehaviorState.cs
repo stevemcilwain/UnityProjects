@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class EnemyBehaviorState : BehaviorState
 {
-    public Transform Target;
+
 
     public bool Moving;
     public Vector3 MovementDestination;
+
+    public bool Chasing;
+    public Transform Target;
 
     public override void Reset()
     {
